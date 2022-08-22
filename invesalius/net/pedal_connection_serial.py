@@ -52,9 +52,9 @@ class PedalConnectionSerial(Thread, metaclass=Singleton):
                 val = self.serial.read()
                 if len(val) == 0:
                     return
-                elif val[0] == 1:
+                elif val[0] == 0:
                     state = True
-                elif val[0] == 7:
+                elif val[0] == 1:
                     state = False
                 else:
                     print("Unknown message type received from Serial device")
